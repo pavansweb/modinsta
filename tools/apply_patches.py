@@ -8,9 +8,9 @@ def apply_patch(target_root, patch_file):
         content = f.read()
 
     # Split by file sections if multiple files are in one patch
-    # Looking for patterns like "## File: `...`" or "**File:** `...`"
     # Matches: ## File: `path/to/file` or **File:** `path/to/file`
-    sections = re.split(r'(?:## |\*\*)File:? \**`?([^`\*\s\(\)]+)`?\**', content)
+    # Also handles bold colons and backticks variations
+    sections = re.split(r'(?:## |\*\*)File:?\**[:\s]*[`*]*([^`*\s\(\)]+)[`*]*', content)
 
     if len(sections) < 3:
         print(f"  No file sections found in {patch_file}")
