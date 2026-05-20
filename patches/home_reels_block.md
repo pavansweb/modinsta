@@ -34,7 +34,17 @@ const-string v0, "discover/explore_clips_disabled/"
 
 ---
 
-## Explore Grid (Optional/Experimental)
-**Note:** To further clean the Search page and focus only on accounts, you may also consider invalidating the general explore grid endpoint if it contains unwanted video content.
+## Explore Grid (Account-Focused Search)
+**File:** `smali_classes11/X/PzM.smali`
 
-**Target:** `discover/explore_grid/` (Check for this string in your decompiled source).
+**Modification:** Invalidate the general explore grid endpoints to focus the Search page on accounts.
+
+### Search for:
+```smali
+const-string v0, "discover/explore_grid/"
+```
+
+### Replace with:
+```smali
+const-string v0, "discover/explore_grid_disabled/"
+```
