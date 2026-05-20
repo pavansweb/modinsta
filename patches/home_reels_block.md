@@ -20,7 +20,7 @@ const-string v2, "disabled_netego"
 ## Explore Method (Endpoint)
 **File:** `smali_classes11/X/PzM.smali`
 
-**Modification:** Invalidate the network endpoint responsible for fetching the Reels grid in Search.
+**Modification:** Invalidate the network endpoint responsible for fetching the Reels grid in Search. This ensures that the video-heavy "Reels" section of the Explore/Search page is blocked.
 
 ### Search for:
 ```smali
@@ -31,3 +31,10 @@ const-string v0, "discover/explore_clips/"
 ```smali
 const-string v0, "discover/explore_clips_disabled/"
 ```
+
+---
+
+## Explore Grid (Optional/Experimental)
+**Note:** To further clean the Search page and focus only on accounts, you may also consider invalidating the general explore grid endpoint if it contains unwanted video content.
+
+**Target:** `discover/explore_grid/` (Check for this string in your decompiled source).

@@ -4,7 +4,7 @@ A project to surgically modify the Instagram Android APK to remove infinite-scro
 
 ## 🚀 Final Features (v4)
 - **Reels Tab Removed:** The bottom navigation Reels button is replaced/merged with the Profile tab.
-- **Homepage Reels Blocked:** Sugggested Reels ("Clips Netego") are invalidated. Your feed stays clean.
+- **Homepage Reels Blocked:** Suggested Reels ("Clips Netego") are invalidated. Your feed stays clean.
 - **Stories Restored:** Essential story tray at the top remains fully functional.
 - **Explore (Search) Page Reels Blocked:** Search for people and tags without the video grid distraction.
 - **DM Reels Scroll-Lock:** Open a Reel from a message, but swiping up/down to see more is disabled.
@@ -36,7 +36,12 @@ A project to surgically modify the Instagram Android APK to remove infinite-scro
 
 ## 📦 How to Build
 1. Decompile: `apktool d -r instagram.apk`
-2. Apply patches (see `/patches` folder).
+2. Apply patches:
+   - Manually follow instructions in the `/patches` folder.
+   - **OR** Use the automation tool:
+     ```bash
+     python3 tools/apply_patches.py <decompiled_apk_dir>
+     ```
 3. Rebuild: `apktool b ig_mod -o modded.apk`
 4. Sign: `java -jar uber-apk-signer.jar --apks modded.apk`
 
